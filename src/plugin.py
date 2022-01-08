@@ -6,7 +6,7 @@ from Components.ActionMap import ActionMap
 from Screens.ChannelSelection import ChannelSelection
 from Screens.InfoBarGenerics import InfoBarChannelSelection
 from enigma import eServiceCenter, eActionMap, getDesktop, eServiceReference, eTimer
-from HistoryZap import HistoryZapSelector
+from .HistoryZap import HistoryZapSelector
 from Components.Pixmap import Pixmap, MultiPixmap
 from Screens.Screen import Screen
 from Screens.ParentalControlSetup import ProtectedScreen
@@ -159,7 +159,7 @@ class SetupZapSelectorScreen(Screen, ConfigListScreen, ProtectedScreen):
 	def initConfig(self):
 		def getPrevValues(section):
 			res = {}
-			for (key, val) in section.content.items.items():
+			for (key, val) in list(section.content.items.items()):
 				if isinstance(val, ConfigSubsection):
 					res[key] = getPrevValues(val)
 				else:
@@ -218,7 +218,7 @@ class SetupZapSelectorScreen(Screen, ConfigListScreen, ProtectedScreen):
 
 	def keyRed(self):
 		def setPrevValues(section, values):
-			for (key, val) in section.content.items.items():
+			for (key, val) in list(section.content.items.items()):
 				value = values.get(key, None)
 				if value is not None:
 					if isinstance(val, ConfigSubsection):
