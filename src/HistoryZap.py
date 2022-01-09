@@ -695,7 +695,7 @@ class HistoryZapSelector(Screen, HelpableScreen):
 				"ok": (self.okbuttonClick, _("zap to service")),
 				"cancel": (self.cancelClick, _("exit")),
 				"jumpPreviousMark": (self.prev, _("previous entry")),
-				"jumpNextMark": (self.next, _("next entry")),
+				"jumpNextMark": (self.nextEntry, _("next entry")),
 				"toggleMark": (self.okbuttonClick, _("zap to service")),
 				"showInfo": (self.epgmapbuttonClick, _("open single EPG")),
 				"showGuide": (self.infomapbuttonClick, _("open Event View")),
@@ -807,7 +807,7 @@ class HistoryZapSelector(Screen, HelpableScreen):
 		else:
 			self.up()
 
-	def next(self):
+	def nextEntry(self):
 		if self.redirectButton:
 			self.up()
 		else:
@@ -1155,7 +1155,7 @@ class HistoryZapSelector(Screen, HelpableScreen):
 	def menubuttonClick(self):
 		if self.preview_zap or self.numberZapActive or self.FullEntryActive:
 			return
-		from plugin import SetupZapSelectorScreen
+		from .plugin import SetupZapSelectorScreen
 		self.session.openWithCallback(self.cancelClick, SetupZapSelectorScreen)
 
 	def greenbuttonClick(self):
@@ -1169,7 +1169,7 @@ class HistoryZapSelector(Screen, HelpableScreen):
 
 	def answerClear(self, answer):
 		if answer:
-			from plugin import InfoBarChannelSelection_instance, historyClear
+			from .plugin import InfoBarChannelSelection_instance, historyClear
 			if InfoBarChannelSelection_instance and historyClear(InfoBarChannelSelection_instance):
 				self.cancelClick()
 
@@ -1185,7 +1185,7 @@ class HistoryZapSelector(Screen, HelpableScreen):
 
 	def deleteEntryConfirmed(self, answer):
 		if answer:
-			from plugin import InfoBarChannelSelection_instance, historyDeleteCurrentEntry
+			from .plugin import InfoBarChannelSelection_instance, historyDeleteCurrentEntry
 			ref = self.getCurrent()
 			if InfoBarChannelSelection_instance and historyDeleteCurrentEntry(InfoBarChannelSelection_instance, ref):
 				self.new_list = []
