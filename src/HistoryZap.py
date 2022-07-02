@@ -792,7 +792,7 @@ class HistoryZapSelector(Screen, HelpableScreen):
 			self.playservice = self.session.nav.getCurrentlyPlayingServiceOrGroup()
 		except:
 			self.playservice = self.session.nav.getCurrentlyPlayingServiceReference()
-		service = self.list[0][0]
+		service = len(self.list) > 0 and self.list[0][0] or None
 		if self.playservice is None or (service and service != self.playservice):
 			self.playservice = service
 
