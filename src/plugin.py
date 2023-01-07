@@ -458,11 +458,11 @@ def historyZap(self, direction):
 							if begin is not None:
 								end = begin + event.getDuration()
 								if config.plugins.SetupZapSelector.duration_type.value == "1":
-									i = (int(time()) - begin) * 100 / event.getDuration()
+									i = (int(time()) - begin) * 100 // event.getDuration()
 									if i < 101:
 										durationTime = i
 								else:
-									remaining = (end - int(time())) / 60
+									remaining = (end - int(time())) // 60
 									prefix = ""
 									if remaining > 0:
 										prefix = "+"
