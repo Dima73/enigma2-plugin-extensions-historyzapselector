@@ -14,7 +14,10 @@ from Components.config import config
 from Tools.Directories import fileExists
 from Tools.Alternatives import GetWithAlternative
 from Screens.PictureInPicture import PictureInPicture
-from Screens.ServiceInfo import ServiceInfo
+try:
+	from Screens.ServiceInfo import ServiceInfo
+except:
+	ServiceInfo = None
 import Screens.InfoBar
 from Tools.BoundFunction import boundFunction
 import Components.ParentalControl
@@ -1039,7 +1042,7 @@ class HistoryZapSelector(Screen, HelpableScreen):
 	def audiobuttonClick(self):
 		cur = self["menu"].current
 		try:
-			if cur and cur[0] and cur[0].valid():
+			if ServiceInfo != None and cur and cur[0] and cur[0].valid():
 				current = cur[0]
 				if current.flags & eServiceReference.isGroup:
 					playingref = self.session.nav.getCurrentlyPlayingServiceOrGroup()
