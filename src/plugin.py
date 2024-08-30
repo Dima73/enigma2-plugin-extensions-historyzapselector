@@ -27,7 +27,7 @@ except:
 	UseAutoCamSetup = False
 
 
-PLUGIN_VERSION = _(" ver. ") + "3.2"
+PLUGIN_VERSION = _(" ver. ") + "3.3"
 
 HistorySaveFile = "/etc/enigma2/historyzapselector.conf"
 
@@ -41,6 +41,7 @@ HistoryZapSelectorKeys = [
 	["LeftRight", _("only LEFT/RIGHT"), ["KEY_LEFT", "KEY_RIGHT"]],
 	["TextHelp", _("only TEXT/HELP"), ["KEY_TEXT", "KEY_HELP"]],
 	["Bouquet", _("only CH+/-,B+/-,P+/-"), ["KEY_CHANNELUP", "KEY_CHANNELDOWN"]],
+	["Back", _("only key BACK"), ["KEY_BACK"], ["KEY_BACK"]],
 ]
 
 config.plugins.SetupZapSelector = ConfigSubsection()
