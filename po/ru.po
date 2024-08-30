@@ -213,6 +213,9 @@ msgstr "только Pipzap"
 msgid "only TEXT/HELP"
 msgstr "только TEXT/HELP"
 
+msgid "only key BACK"
+msgstr "только кнопка BACK"
+
 msgid "only standard PiP"
 msgstr "только стандартный PiP"
 
