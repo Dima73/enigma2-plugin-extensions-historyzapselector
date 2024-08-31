@@ -40,7 +40,7 @@ HistoryZapSelectorKeys = [
 	["none", _("standard <  >"), ["KEY_RESERVED", "KEY_RESERVED"]],
 	["LeftRight", _("only LEFT/RIGHT"), ["KEY_LEFT", "KEY_RIGHT"]],
 	["Text", _("only TEXT"), ["KEY_TEXT"]],
-   	 ["Help", _("only HELP"), ["KEY_HELP"]],
+	["Help", _("only HELP"), ["KEY_HELP"]],
 	["Bouquet", _("only CH+/-,B+/-,P+/-"), ["KEY_CHANNELUP", "KEY_CHANNELDOWN"]],
 	["Back", _("only key BACK"), ["KEY_BACK"], ["KEY_BACK"]],
 ]
