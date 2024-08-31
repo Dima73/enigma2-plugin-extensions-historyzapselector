@@ -210,11 +210,11 @@ msgstr "только LEFT/RIGHT"
 msgid "only Pipzap"
 msgstr "только Pipzap"
 
-msgid "only TEXT/HELP"
-msgstr "только TEXT/HELP"
+msgid "only HELP"
+msgstr "только HELP"
 
 msgid "only TEXT"
-msgstr "только HELP"
+msgstr "только TEXT"
 
 msgid "only key BACK"
 msgstr "только кнопка BACK"
